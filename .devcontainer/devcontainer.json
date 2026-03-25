@@ -1,0 +1,27 @@
+{
+  "name": "deer-flow-codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [2026, 2024, 8001],
+  "portsAttributes": {
+    "2026": {
+      "label": "DeerFlow Web",
+      "onAutoForward": "openBrowser"
+    },
+    "2024": {
+      "label": "LangGraph API"
+    },
+    "8001": {
+      "label": "Gateway API"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
