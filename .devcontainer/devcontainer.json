@@ -9,11 +9,15 @@
       "version": "3.12"
     }
   },
-  "forwardPorts": [2026, 2024, 8001],
+  "postStartCommand": "bash .devcontainer/post-start.sh",
+  "forwardPorts": [2026, 3000, 8001, 2024],
   "portsAttributes": {
     "2026": {
       "label": "DeerFlow Web",
       "onAutoForward": "openBrowser"
+    },
+    "3000": {
+      "label": "Frontend"
     },
     "2024": {
       "label": "LangGraph API"
